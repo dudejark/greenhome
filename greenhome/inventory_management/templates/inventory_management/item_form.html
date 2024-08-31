@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.instance.id|yesno:"Edit Item,Add Item" }}</title>
+</head>
+<body>
+    <h1>{{ form.instance.id|yesno:"Edit Item,Add Item" }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{{ form.instance.id|yesno:"Update,Create" }}</button>
+    </form>
+</body>
+</html>
